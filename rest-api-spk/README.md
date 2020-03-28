@@ -82,3 +82,7 @@
 ### 结果设置：
 - 普通精度判断是否同一人：threshold>angle 并且 ASRSpeaker == accept
 - 指定精度 0.996 判断是否同一人：threshold>angle 并且 scores >= 0.996 并且 ASRSpeaker == accept
+
+# Speaker_1_N() 参数设置
+### 描述
+- 还在开发。。。。
