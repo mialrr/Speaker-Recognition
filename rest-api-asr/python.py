@@ -11,7 +11,7 @@ def ASRTxt():
     url = 'http://localhost:8888'
     #url = 'http://47.110.142.112:8888'
     soundPath = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/76256_39.wav"
-    AppID = "24a42z534"
+    AppID = "暂时先不提供"
     APIKey = "378d4582ad3ed253057cafe9c70fae8b"
     SecretKey = "d6uk5fd"
     starttime = time.time()
@@ -27,6 +27,7 @@ def ASRTxt():
 
 
 if __name__ == "__main__":
+    # 暂时先不提供
     ASRTxt()
 
 
