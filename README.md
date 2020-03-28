@@ -2,7 +2,6 @@
 声纹识别(Voiceprint Recognition, VPR)，也称为说话人识别(Speaker Recognition)，
 有两类，即说话人辨认(Speaker Identification)和说话人确认(Speaker Verification)
 
-
 # speech-demo
 - 项目地址：https://github.com/mialrr/Speaker-Recognition
 
@@ -11,8 +10,6 @@
 - 声纹识别：
 - 语音识别：
 - 语音合成：
-
-
 
 - 目前AppID，APIKey，SecretKey是共用的等待官网开发完成自己申请就可以
 
@@ -41,5 +38,8 @@
   
 # 请求
 -  对于贡献大批量可用（开源数据不算）训练样本的兄弟，我们可以给您线下免费部署一套完整服务
+
+# 客户场景
+- 已在一家支付公司使用（支付场景）
 
 #### weixin:13165984330
