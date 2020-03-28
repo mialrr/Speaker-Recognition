@@ -7,9 +7,9 @@ import time
 
 # 1:1 检测两个声音是不是同一个人的声音
 def Speaker_1_1():
-    url = 'http://bbs.ziyoujie.com:8888'
+    # url = 'http://bbs.ziyoujie.com:8888'
     # url = 'http://localhost:8888'
-    #url = 'http://47.110.142.112:8888'
+    url = 'http://47.110.142.112:9999'
     sound0path = "../sample-files/156_0.wav"
     sound1path = "../sample-files/156_1.wav"
     AppID = "2rtg2z53r"
@@ -26,9 +26,9 @@ def Speaker_1_1():
 
 # 认证分为两部分（1:检测是否说了指定的文字的语音 2:检测是不是同一个人的声纹）
 def ASR_Speaker_1_1():
-    url = 'http://bbs.ziyoujie.com:8888'
+    # url = 'http://bbs.ziyoujie.com:8888'
     # url = 'http://localhost:8888'
-    # url = 'http://47.110.142.112:8888'
+    url = 'http://47.110.142.112:9999'
     sound0path = "../sample-files/76256_39.wav"
     sound1path = "../sample-files/156_1.wav"
     AppID = "2rf9j453r"
