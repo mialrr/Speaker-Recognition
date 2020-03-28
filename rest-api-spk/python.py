@@ -47,10 +47,6 @@ def ASR_Speaker_1_1():
     print(time.time() - starttime, "秒")
 
 if __name__ == "__main__":
-    # print("1"*100)
     Speaker_1_1()
-    # print("2" * 100)
-    # ASRTxt()
-    # print("3" * 100)
-    # ASR_Speaker_1_1()
+    ASR_Speaker_1_1()
 
