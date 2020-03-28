@@ -23,11 +23,13 @@
 
 # 目录结构
 - +--rest-api-asr  语音识别rest api
--    /--bash_shell shell脚本                   （稍后开发）
+-    /-- bash_shell shell脚本                  （稍后开发）
 -    /-- java 代码                             （稍后开发）
 -    /-- linux_c C代码 （windows Cygwin可以运行）（稍后开发）
 -    /-- php 代码                              （稍后开发）
 -    /-- python代码                            （已经开发）
+
+- +-- sample-files 语音识别示例音频文件
  
  
 # 项目进度：
