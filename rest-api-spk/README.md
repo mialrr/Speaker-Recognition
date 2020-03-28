@@ -9,7 +9,7 @@
 - 返回识别结果：识别结果会即刻返回，采用 JSON 格式封装
 
 # 目录结构
-- +--rest-api-asr  语音识别rest api
+- +--rest-api-spk  声纹识别rest api
 -    /-- bash_shell shell脚本                  （稍后开发）
 -    /-- java 代码                             （稍后开发）
 -    /-- linux_c C代码 （windows Cygwin可以运行）（稍后开发）
