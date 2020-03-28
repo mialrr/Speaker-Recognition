@@ -10,8 +10,8 @@ def Speaker_1_1():
     # url = 'http://bbs.ziyoujie.com:8888'
     url = 'http://localhost:8888'
     #url = 'http://47.110.142.112:8888'
-    sound0path = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/156_0.wav"
-    sound1path = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/156_1.wav"
+    sound0path = "../sample-files/156_0.wav"
+    sound1path = "../sample-files/156_1.wav"
     AppID = "2rtg2z53r"
     APIKey = "378d4582ad3ed253057cafe9c70fae8b"
     SecretKey = "d6uk5fd"
@@ -29,8 +29,8 @@ def ASR_Speaker_1_1():
     # url = 'http://bbs.ziyoujie.com:8888'
     url = 'http://localhost:8888'
     # url = 'http://47.110.142.112:8888'
-    sound0path = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/76256_39.wav"
-    sound1path = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/156_1.wav"
+    sound0path = "../sample-files/76256_39.wav"
+    sound1path = "../sample-files/156_1.wav"
     AppID = "2rf9j453r"
     APIKey = "378d4582ad3ed253057cafe9c70fae8b"
     SecretKey = "d6uk5fd"
