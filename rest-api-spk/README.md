@@ -62,7 +62,7 @@
 |AppID|字符|2rf9j453r|以后通过网站申请，现在使用默认就可以|
 |APIKey|字符|378d4582ad3ed253057cafe9c70fae8b|以后通过网站申请，现在使用默认就可以|
 |SecretKey|字符|d6uk5fd|以后通过网站申请，现在使用默认就可以|
-|Language|字符|cn|中文语音识别（cn），中文语音识别（en）|
+|Language|字符|cn|中文语音识别（cn），英文语音识别（en）|
 |SpkTxt|字符|'他完全将自己当成了一个凡人在体会这人世间的生老病死悲欢离合'|Sound0说话的文本内容|
 |Sound0|file|你要识别的音频文件，例如：76256_39.wav|目前支持(wav,flac)|
 |Sound1|file|你要识别的音频文件，例如：156_1.wav|目前支持(wav,flac)|
