@@ -2,6 +2,7 @@
 声纹识别(Voiceprint Recognition, VPR)，也称为说话人识别(Speaker Recognition)，
 有两类，即说话人辨认(Speaker Identification)和说话人确认(Speaker Verification)
 
+
 # speech-demo
 - 项目地址：https://github.com/mialrr/Speaker-Recognition
 
@@ -13,13 +14,14 @@
 
 
 
-- Rest API 接口为http 访问， 任意操作系统，任意语言，只要能对域名或者IP地址发起http请求的，均可以使用。
-
 - 目前AppID，APIKey，SecretKey是共用的等待官网开发完成自己申请就可以
 
-
 # 简介
+- Rest API 接口为http 访问， 任意操作系统，任意语言，只要能对域名或者IP地址发起http请求的，均可以使用。
 - 以JAVA PHP python C BASH 作为示例，展示rest api的调用过程，选择一个运行即可。
+- 支持音频格式：wav、flac
+- 音频编码要求：采样率 16000，16bit 位深，单声道（音频格式查看及转换）声纹识别长度不要超过10毫秒
+- 返回识别结果：识别结果会即刻返回，采用 JSON 格式封装
 
 # 目录结构
 - +--rest-api-asr  语音识别rest api
