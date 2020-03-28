@@ -7,8 +7,8 @@ import time
 
 # 语音识别 （语音转文字）
 def ASRTxt():
-    #url = 'http://bbs.ziyoujie.com:8888'
-    url = 'http://localhost:8888'
+    url = 'http://bbs.ziyoujie.com:8888'
+    #url = 'http://localhost:8888'
     #url = 'http://47.110.142.112:8888'
     soundPath = "/home/louj/disk/m2_2T/VoxCeleb1/data/vox1/test/wav/id90148/EEEEEEEE48/76256_39.wav"
     AppID = "暂时先不提供"
