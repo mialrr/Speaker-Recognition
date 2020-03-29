@@ -1,0 +1,19 @@
+
+OkHttpClient client = new OkHttpClient().newBuilder().build();
+MediaType mediaType = MediaType.parse("text/plain");
+RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+  .addFormDataPart("AppID", "2rtg2z53r")
+  .addFormDataPart("APIKey", "378d4582ad3ed253057cafe9c70fae8b")
+  .addFormDataPart("SecretKey", "d6uk5fd")
+  .addFormDataPart("Sound0","/C:/Users/nuc/Desktop/tmp/my/2.wav",
+    RequestBody.create(MediaType.parse("application/octet-stream"),
+    new File("/C:/Users/nuc/Desktop/tmp/my/2.wav")))
+  .addFormDataPart("Sound1","/C:/Users/nuc/Desktop/tmp/my/3.wav",
+    RequestBody.create(MediaType.parse("application/octet-stream"),
+    new File("/C:/Users/nuc/Desktop/tmp/my/3.wav")))
+  .build();
+Request request = new Request.Builder()
+  .url("http://47.110.142.112:9999")
+  .method("POST", body)
+  .build();
+Response response = client.newCall(request).execute();
