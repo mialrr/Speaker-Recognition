@@ -22,11 +22,13 @@
 
 # 目录结构
 - +--rest-api-spk  声纹识别rest api
--    /-- bash_shell shell脚本                  （稍后开发）
--    /-- java 代码                             （稍后开发）
--    /-- linux_c C代码 （windows Cygwin可以运行）（稍后开发）
--    /-- php 代码                              （稍后开发）
--    /-- python代码                            （已经开发）
+-    /-- shell 脚本                  
+-    /-- java 代码                             
+-    /-- C 代码 
+-    /-- php 代码                              
+-    /-- python 代码
+-    /-- C# 代码 
+-    /-- Ruby 代码   
 
 - +-- sample-files 语音识别示例音频文件
  
