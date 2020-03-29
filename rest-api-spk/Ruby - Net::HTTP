@@ -1,0 +1,11 @@
+require "uri"
+require "net/http"
+
+url = URI("http://47.110.142.112:9999")
+
+http = Net::HTTP.new(url.host, url.port);
+request = Net::HTTP::Post.new(url)
+form_data = [['AppID', '2rtg2z53r'],['APIKey', '378d4582ad3ed253057cafe9c70fae8b'],['SecretKey', 'd6uk5fd'],['Sound0', File.open('/C:/Users/nuc/Desktop/tmp/my/2.wav')],['Sound1', File.open('/C:/Users/nuc/Desktop/tmp/my/3.wav')]]
+request.set_form form_data, 'multipart/form-data'
+response = http.request(request)
+puts response.read_body
