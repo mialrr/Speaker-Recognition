@@ -1,3 +1,6 @@
+#################################################
+#Speaker_1_1 1:1 检测两个声音是不是同一个人的声音
+#################################################
 CURL *curl;
 CURLcode res;
 curl = curl_easy_init();
@@ -22,10 +25,10 @@ if(curl) {
   curl_mime_data(part, "d6uk5fd", CURL_ZERO_TERMINATED);
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "Sound0");
-  curl_mime_filedata(part, "/C:/Users/nuc/Desktop/tmp/my/2.wav");
+  curl_mime_filedata(part, "../sample-files/156_0.wav");
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "Sound1");
-  curl_mime_filedata(part, "/C:/Users/nuc/Desktop/tmp/my/3.wav");
+  curl_mime_filedata(part, "../sample-files/156_1.wav");
   curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
   res = curl_easy_perform(curl);
   curl_mime_free(mime);
@@ -34,6 +37,12 @@ curl_easy_cleanup(curl);
 
 
 
+#################################################
+# ASR_Speaker_1_1 认证分为两部分
+# 1:检测是否说了指定的文字的语音
+# 2:检测是不是同一个人的声纹
+# SpkTxt是语音Sound0的文本
+#################################################
 
 CURL *curl;
 CURLcode res;
@@ -59,16 +68,16 @@ if(curl) {
   curl_mime_data(part, "d6uk5fd", CURL_ZERO_TERMINATED);
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "Sound0");
-  curl_mime_filedata(part, "/C:/Users/nuc/Desktop/tmp/my/156_1.wav");
+  curl_mime_filedata(part, "../sample-files/76256_39.wav");
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "Sound1");
-  curl_mime_filedata(part, "/C:/Users/nuc/Desktop/tmp/my/156_0.wav");
+  curl_mime_filedata(part, "../sample-files/156_1.wav");
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "Language");
   curl_mime_data(part, "cn", CURL_ZERO_TERMINATED);
   part = curl_mime_addpart(mime);
   curl_mime_name(part, "SpkTxt");
-  curl_mime_data(part, "取箱子的时候他注意到那个木头箱子的造型有点奇怪有点像是", CURL_ZERO_TERMINATED);
+  curl_mime_data(part, "他完全将自己当成了一个凡人在体会这人世间的生老病死悲欢离合", CURL_ZERO_TERMINATED);
   curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
   res = curl_easy_perform(curl);
   curl_mime_free(mime);

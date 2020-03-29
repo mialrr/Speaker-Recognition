@@ -1,3 +1,6 @@
+#################################################
+#Speaker_1_1 1:1 检测两个声音是不是同一个人的声音
+#################################################
 var request = require('request');
 var fs = require('fs');
 var options = {
@@ -10,16 +13,16 @@ var options = {
     'APIKey': '378d4582ad3ed253057cafe9c70fae8b',
     'SecretKey': 'd6uk5fd',
     'Sound0': {
-      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/2.wav'),
+      'value': fs.createReadStream("../sample-files/156_0.wav"),
       'options': {
-        'filename': '/C:/Users/nuc/Desktop/tmp/my/2.wav',
+        'filename': "../sample-files/156_0.wav",
         'contentType': null
       }
     },
     'Sound1': {
-      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/3.wav'),
+      'value': fs.createReadStream("../sample-files/156_1.wav"),
       'options': {
-        'filename': '/C:/Users/nuc/Desktop/tmp/my/3.wav',
+        'filename': "../sample-files/156_1.wav",
         'contentType': null
       }
     }
@@ -34,6 +37,13 @@ request(options, function (error, response) {
 
 
 
+#################################################
+# ASR_Speaker_1_1 认证分为两部分
+# 1:检测是否说了指定的文字的语音
+# 2:检测是不是同一个人的声纹
+# SpkTxt是语音Sound0的文本
+#################################################
+
 var request = require('request');
 var fs = require('fs');
 var options = {
@@ -46,21 +56,21 @@ var options = {
     'APIKey': '378d4582ad3ed253057cafe9c70fae8b',
     'SecretKey': 'd6uk5fd',
     'Sound0': {
-      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/156_1.wav'),
+      'value': fs.createReadStream("../sample-files/76256_39.wav"),
       'options': {
-        'filename': '/C:/Users/nuc/Desktop/tmp/my/156_1.wav',
+        'filename': "../sample-files/76256_39.wav",
         'contentType': null
       }
     },
     'Sound1': {
-      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/156_0.wav'),
+      'value': fs.createReadStream("../sample-files/156_1.wav"),
       'options': {
-        'filename': '/C:/Users/nuc/Desktop/tmp/my/156_0.wav',
+        'filename': "../sample-files/156_1.wav",
         'contentType': null
       }
     },
     'Language': 'cn',
-    'SpkTxt': '取箱子的时候他注意到那个木头箱子的造型有点奇怪有点像是'
+    'SpkTxt': '他完全将自己当成了一个凡人在体会这人世间的生老病死悲欢离合'
   }
 };
 request(options, function (error, response) { 

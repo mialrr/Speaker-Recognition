@@ -1,3 +1,6 @@
+#################################################
+#Speaker_1_1 1:1 检测两个声音是不是同一个人的声音
+#################################################
 #import <Foundation/Foundation.h>
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
@@ -9,8 +12,8 @@ NSArray *parameters = @[
   @{ @"name": @"AppID", @"value": @"2rtg2z53r" }, 
   @{ @"name": @"APIKey", @"value": @"378d4582ad3ed253057cafe9c70fae8b" }, 
   @{ @"name": @"SecretKey", @"value": @"d6uk5fd" }, 
-  @{ @"name": @"Sound0", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/2.wav" }, 
-  @{ @"name": @"Sound1", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/3.wav" } 
+  @{ @"name": @"Sound0", @"fileName": @"../sample-files/156_0.wav" },
+  @{ @"name": @"Sound1", @"fileName": @"../sample-files/156_1.wav" }
 ];
 
 NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
@@ -54,7 +57,12 @@ completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 
-
+#################################################
+# ASR_Speaker_1_1 认证分为两部分
+# 1:检测是否说了指定的文字的语音
+# 2:检测是不是同一个人的声纹
+# SpkTxt是语音Sound0的文本
+#################################################
 #import <Foundation/Foundation.h>
 
 dispatch_semaphore_t sema = dispatch_semaphore_create(0);
@@ -66,10 +74,10 @@ NSArray *parameters = @[
   @{ @"name": @"AppID", @"value": @"2rtg2z53r" }, 
   @{ @"name": @"APIKey", @"value": @"378d4582ad3ed253057cafe9c70fae8b" }, 
   @{ @"name": @"SecretKey", @"value": @"d6uk5fd" }, 
-  @{ @"name": @"Sound0", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/156_1.wav" }, 
-  @{ @"name": @"Sound1", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/156_0.wav" }, 
+  @{ @"name": @"Sound0", @"fileName": @"../sample-files/76256_39.wav" },
+  @{ @"name": @"Sound1", @"fileName": @"../sample-files/156_1.wav" },
   @{ @"name": @"Language", @"value": @"cn" }, 
-  @{ @"name": @"SpkTxt", @"value": @"取箱子的时候他注意到那个木头箱子的造型有点奇怪有点像是" } 
+  @{ @"name": @"SpkTxt", @"value": @"他完全将自己当成了一个凡人在体会这人世间的生老病死悲欢离合" }
 ];
 
 NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
