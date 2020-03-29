@@ -29,3 +29,42 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
 });
+
+
+
+
+
+var request = require('request');
+var fs = require('fs');
+var options = {
+  'method': 'POST',
+  'url': 'http://47.110.142.112:9999',
+  'headers': {
+  },
+  formData: {
+    'AppID': '2rtg2z53r',
+    'APIKey': '378d4582ad3ed253057cafe9c70fae8b',
+    'SecretKey': 'd6uk5fd',
+    'Sound0': {
+      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/156_1.wav'),
+      'options': {
+        'filename': '/C:/Users/nuc/Desktop/tmp/my/156_1.wav',
+        'contentType': null
+      }
+    },
+    'Sound1': {
+      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/156_0.wav'),
+      'options': {
+        'filename': '/C:/Users/nuc/Desktop/tmp/my/156_0.wav',
+        'contentType': null
+      }
+    },
+    'Language': 'cn',
+    'SpkTxt': '取箱子的时候他注意到那个木头箱子的造型有点奇怪有点像是'
+  }
+};
+request(options, function (error, response) { 
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+
