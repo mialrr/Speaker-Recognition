@@ -1,0 +1,6 @@
+http --ignore-stdin --form --follow --timeout 3600 POST 47.110.142.112:9999/ \
+ 'AppID'='2rtg2z53r' \
+ 'APIKey'='378d4582ad3ed253057cafe9c70fae8b' \
+ 'SecretKey'='d6uk5fd' \
+ 'Sound0'@/C:/Users/nuc/Desktop/tmp/my/2.wav \
+ 'Sound1'@/C:/Users/nuc/Desktop/tmp/my/3.wav
