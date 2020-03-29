@@ -1,0 +1,31 @@
+var request = require('request');
+var fs = require('fs');
+var options = {
+  'method': 'POST',
+  'url': 'http://47.110.142.112:9999',
+  'headers': {
+  },
+  formData: {
+    'AppID': '2rtg2z53r',
+    'APIKey': '378d4582ad3ed253057cafe9c70fae8b',
+    'SecretKey': 'd6uk5fd',
+    'Sound0': {
+      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/2.wav'),
+      'options': {
+        'filename': '/C:/Users/nuc/Desktop/tmp/my/2.wav',
+        'contentType': null
+      }
+    },
+    'Sound1': {
+      'value': fs.createReadStream('/C:/Users/nuc/Desktop/tmp/my/3.wav'),
+      'options': {
+        'filename': '/C:/Users/nuc/Desktop/tmp/my/3.wav',
+        'contentType': null
+      }
+    }
+  }
+};
+request(options, function (error, response) { 
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
