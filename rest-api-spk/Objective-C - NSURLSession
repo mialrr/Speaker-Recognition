@@ -1,0 +1,54 @@
+#import <Foundation/Foundation.h>
+
+dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://47.110.142.112:9999"]
+  cachePolicy:NSURLRequestUseProtocolCachePolicy
+  timeoutInterval:10.0];
+NSArray *parameters = @[
+  @{ @"name": @"AppID", @"value": @"2rtg2z53r" }, 
+  @{ @"name": @"APIKey", @"value": @"378d4582ad3ed253057cafe9c70fae8b" }, 
+  @{ @"name": @"SecretKey", @"value": @"d6uk5fd" }, 
+  @{ @"name": @"Sound0", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/2.wav" }, 
+  @{ @"name": @"Sound1", @"fileName": @"/C:/Users/nuc/Desktop/tmp/my/3.wav" } 
+];
+
+NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
+NSError *error;
+NSMutableString *body = [NSMutableString string];
+
+for (NSDictionary *param in parameters) {
+  [body appendFormat:@"--%@\r\n", boundary];
+  if (param[@"fileName"]) {
+    [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"; filename=\"%@\"\r\n", param[@"name"], param[@"fileName"]];
+    [body appendFormat:@"Content-Type: %@\r\n\r\n", param[@"contentType"]];
+    [body appendFormat:@"%@", [NSString stringWithContentsOfFile:param[@"fileName"] encoding:NSUTF8StringEncoding error:&error]];
+    if (error) {
+      NSLog(@"%@", error);
+    }
+  } else {
+    [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"\r\n\r\n", param[@"name"]];
+    [body appendFormat:@"%@", param[@"value"]];
+  }
+}
+[body appendFormat:@"\r\n--%@--\r\n", boundary];
+NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
+[request setHTTPBody:postData];
+
+[request setHTTPMethod:@"POST"];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+  if (error) {
+    NSLog(@"%@", error);
+  } else {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    NSError *parseError = nil;
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+    NSLog(@"%@",responseDictionary);
+    dispatch_semaphore_signal(sema);
+  }
+}];
+[dataTask resume];
+dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
