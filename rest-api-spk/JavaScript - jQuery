@@ -1,0 +1,20 @@
+var form = new FormData();
+form.append("AppID", "2rtg2z53r");
+form.append("APIKey", "378d4582ad3ed253057cafe9c70fae8b");
+form.append("SecretKey", "d6uk5fd");
+form.append("Sound0", fileInput.files[0], "/C:/Users/nuc/Desktop/tmp/my/2.wav");
+form.append("Sound1", fileInput.files[0], "/C:/Users/nuc/Desktop/tmp/my/3.wav");
+
+var settings = {
+  "url": "http://47.110.142.112:9999",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
