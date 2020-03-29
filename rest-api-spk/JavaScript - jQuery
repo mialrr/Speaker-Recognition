@@ -18,3 +18,29 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
+
+
+
+
+var form = new FormData();
+form.append("AppID", "2rtg2z53r");
+form.append("APIKey", "378d4582ad3ed253057cafe9c70fae8b");
+form.append("SecretKey", "d6uk5fd");
+form.append("Sound0", fileInput.files[0], "/C:/Users/nuc/Desktop/tmp/my/156_1.wav");
+form.append("Sound1", fileInput.files[0], "/C:/Users/nuc/Desktop/tmp/my/156_0.wav");
+form.append("Language", "cn");
+form.append("SpkTxt", "取箱子的时候他注意到那个木头箱子的造型有点奇怪有点像是");
+
+var settings = {
+  "url": "http://47.110.142.112:9999",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
